@@ -1,28 +1,16 @@
-== README
+1. To run, open folder in bash and type "rails s -b0.0.0.0"
+	1.1 The shell may prompt you to do a "bundle exec rake db:migrate"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2. Access the webpage using "localhost:3000" in your browser.
 
-Things you may want to cover:
+3. Register an account.
 
-* Ruby version
+4. Login using your registered account.
 
-* System dependencies
+5. Create a playlist first by typing your playlist in the "Create a new playlist" textbox.
 
-* Configuration
+6. Upload a song, the song will be placed inside your created playlist.
 
-* Database creation
+7. To play a song, double click on it and press the play button. Note that it may not play asap because it will have to load first.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+8. You can move the song to another playlist by right clicking on it on the list displayed on the right.
