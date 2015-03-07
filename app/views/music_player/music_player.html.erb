@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<div id="parent_player_div">
+
+	<div id="player_header">
+		<span>Logged in as <i><%= session[:username] %></i></span>
+		<button onclick="location.href= '/music_player/logout'">Logout</button>
+	</div>
+
+	<div id="frame">
+		<div id="left">
+			<div id="player">
+
+				<div id="controls" align="center">
+					<button id="btnprev"><img src="<%= asset_path 'music_player/prev.png' %>" alt="Previous" width=20 height=20 align="middle" /></button>
+					<button id="btnplay"><img src="<%= asset_path 'music_player/play.png' %>" alt="Play" width=20 height=20 align="middle" /></button>
+					<button id="btnpause"><img src="<%= asset_path 'music_player/pause.png' %>" alt="Pause" width=20 height=20 align="middle" /></button>
+					<button id="btnstop"><img src="<%= asset_path 'music_player/stop.png' %>" alt="Stop" width=20 height=20 align="middle" /></button>
+					<button id="btnnext"><img src="<%= asset_path 'music_player/next.png' %>" alt="Next" width=20 height=20 align="middle" /></button>
+				</div>
+				
+				<div id="songinfo">
+					<div class="title"></div> 
+					<div class="artist"></div>
+					<div class="album"></div>
+					<div class="duration"></div>
+					<div class="curtime"></div>
+				</div>
+				
+				<hr style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ); height: 2px; border: 0px">
+			</div>
+
+			<!-- %%%%%%%%%%%%%%%%%%%%%%%%% << PLAYLIST %%%%%%%%%%%%%%%%%%%%%%%%% -->
+		
+			<div id="divplaylist">
+				<ul id="tableplaylist">
+					<li>
+					<%= form_tag("/music_player/create_new_playlist", method: :post, :multipart => true ) do %>
+						<input type="text" name="playlist_name" placeholder="Create a new playlist" id="playlistinputtext">
+						<input type="submit" value="Create" style="visibility: hidden;">
+					<% end %>
+					</li>
+				
+				
+					<% @playlist_list.each do |playlist| %>
+						<li>
+							<%= form_tag('/music_player/switch_playlist', method: :post, :multipart => true ) do %>
+								<input type="hidden" name="playlist_id" value="<%= playlist.id %>">
+								<input type="submit" value="<%=  playlist.playlist_name %>" class="playlistinputbutton">
+							<% end %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+
+			<!-- %%%%%%%%%%%%%%%%%%%%%%%%% PLAYLIST >> %%%%%%%%%%%%%%%%%%%%%%%%% -->
+		</div>
+		
+		<div id="rightlist">
+			<ul>
+				<%= form_tag("/music_player/upload", method: :post, :multipart => true ) do %>
+					<li>
+						<label for="btnupload" class="area">Upload a song
+						<%= file_field_tag "upload", "onchange"=>"this.form.submit()", "accept"=>"audio/mp3",
+							"id"=>"btnupload","style"=>"display:none" %>
+						</label>
+				</li>
+			<% end %>
+			</ul>
+			<ul id="tablesongs">
+				
+				<% @songs.each do |song| %>
+					<li title="<%= song.title %>" artist="<%= song.artist %>" album="<%= song.album %>" url="<%= song.url %>" id="area-<%= song.id %>" class="area">
+						<div >
+							<%= song.title %>
+							<!-- CONTEXT MENU -->
+							<ul id="context-menu-<%= song.id %>" class="audero-context-menu">
+								<li>
+									<%= form_tag('/music_player/delete_song', method: :post, :multipart => true ) do %>
+										<input type="hidden" name="song_id" value="<%= song.id %>">
+										<input type="submit" value="Delete">
+									<% end %>
+								</li>
+								<% @playlist_list.each do |playlist| %>
+									<li>
+										<%= form_tag('/music_player/add_song_to_playlist', method: :post, :multipart => true ) do %>
+											<input type="hidden" name="song_id" value="<%= song.id %>">
+											<input type="hidden" name="playlist_id" value="<%= playlist.id %>">
+											<input type="submit" value="<%=  playlist.playlist_name %>">
+										<% end %>
+									</li>
+								<% end %>
+							</ul>
+						</div>	
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	<% @songs.each do |song| %>
+		$("#area-<%= song.id %>").auderoContextMenu("context-menu-<%= song.id %>");
+	<% end %>
+</script>

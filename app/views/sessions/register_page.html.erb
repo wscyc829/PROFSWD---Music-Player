@@ -1,0 +1,21 @@
+<div id="parent_register_div">
+  <div id="register_container" align="center">
+    <div id="register_innerbox">
+
+      <%= form_tag("/music_player/register", method: :post) do %>
+        <div>Username</div>
+        <input type="text" name="new_username" class="inputtextbox" />
+
+        <div>Password</div>
+        <input type="password" name="new_password" class="inputtextbox" />
+
+        <div>Confirm Password</div>
+        <input type="password" name="new_password_confirm" class="inputtextbox" />
+
+        <input type="submit" value="SIGN UP" class="inputbutton" />
+        <input type="button" value="CANCEL" class="inputbutton" onclick="location.href = '/music_player/login'" />
+      <% end %>
+
+    </div>
+  </div>
+</div>

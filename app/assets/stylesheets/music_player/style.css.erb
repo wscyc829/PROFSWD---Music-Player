@@ -1,0 +1,380 @@
+/* ============================= LOGIN PAGE ============================= */
+
+#parent_login_div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= asset_path 'music_player/1.jpg' %>) no-repeat center top fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#login_container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -15vw;
+	margin-left: -15vw;
+	border: 1px solid #FFFFFF;
+	width: 30vw;
+	height: 30vw;
+	vertical-align: middle;
+}
+
+#login_innerbox {
+	position: absolute;
+	height: 20vw;
+	width: 100%;
+	margin-top: 7vw;
+	/*border: 1px solid red;*/
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+.inputbutton {
+	width: 50%;
+	height: 32px;
+	margin-top: 8px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: none;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 18px;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+.inputbutton:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.inputbutton:active {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.inputbutton:focus {
+	outline: none;
+}
+
+.inputtextbox {
+	width: 50%;
+	height: 32px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: none;
+	text-align: center;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+.inputtextbox:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.inputtextbox:focus {
+	outline: none;
+}
+
+/* ============================= END OF LOGIN PAGE ============================= */
+/* ============================= REGISTER PAGE ============================= */
+
+#parent_register_div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= asset_path 'music_player/5.jpg' %>) no-repeat center top fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#register_container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -15vw;
+	margin-left: -15vw;
+	border: 1px solid #FFFFFF;
+	width: 30vw;
+	height: 30vw;
+	vertical-align: middle;
+}
+
+#register_innerbox {
+	position: absolute;
+	height: 20vw;
+	width: 100%;
+	margin-top: 4vw;
+	/*border: 1px solid red;*/
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+/* ============================= END OF REGISTER PAGE ============================= */
+/* ============================= PLAYER PAGE ============================= */
+
+#parent_player_div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(<%= asset_path 'music_player/2.jpg' %>) no-repeat center top fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#player_header {
+	display: inline-block;
+	position: fixed;
+	margin: 0;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+#player_header > span {
+	float: left;
+	margin-top: 2px;
+	margin-left: 4px;
+	color: white;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 14px;
+}
+
+#player_header > button {
+	float: right;
+	height: 100%;
+	width: 100px;
+	background-color: rgba(0, 0, 0, 0.0);
+	border: none;
+	color: white;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 14px;
+}
+
+#player_header > button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+#player_header > button:active {
+	background-color: rgba(0, 0, 0, 0.0);
+}
+
+#player_header > button:focus {
+	outline: none;
+}
+
+#frame {
+	width: 60vw;
+	height: 80vh;
+	max-width: 100%;
+	max-height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	border: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -40vh;
+	margin-left: -30vw;
+}
+
+#left {
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+/* PLAYER AT THE UPPER LEFT */
+
+#controls {
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 30px;
+	width: 100%;
+}
+
+#controls > button {
+	background-color: rgba(0, 0, 0, 0.0);
+	border: 0px;
+	height: 30px;
+	width: 60px;
+}
+
+#controls > button:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#controls > button:active {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#controls > button:focus {
+	outline: none;
+}
+
+#player {
+	width: 94%;
+	height: auto;
+	margin-top: 16px;
+	margin-left: 16px;
+}
+
+#songinfo {
+	width: 100%;
+	margin-top: 16px;
+	margin-left: 4px;
+	font-family: 'Cambria';
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+#album {
+	margin-left: 6px;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 16px;
+	color: #ecf0f1;
+}
+
+/* END OF PLAYER AT THE UPPER RIGHT */
+/* LIST OF PLAYLISTS */
+
+#divplaylist {
+	width: 94%;
+	height: 65%;
+	max-height: none;
+	padding-left: 16px;
+	overflow-y: scroll;
+}
+
+/*#tableplaylist {
+	width: 98%;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+#tableplaylist td {
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 49px;
+}
+
+#tableplaylist td:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#tableplaylist td:active {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+#tableplaylist input[type="text"] {
+	width: 98%;
+	height: 100%;
+	border: none;
+	background-color: transparent;
+	vertical-align: middle;
+	font-size: 18px;
+	font-color: #95a5a6;
+}
+
+#tableplaylist input[type="submit"] {
+}*/
+/* END OF LIST OF PLAYLISTS */
+/* BEGIN SCROLL BAR */
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {  
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* END OF SCROLL BAR */
+/* SONG LIST AT THE RIGHT SIDE */
+
+#rightlist {
+	float: right;
+	width: 50%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.area {
+	margin-left: 16px;
+}
+
+.artistitalic { 
+	font-family: 'Segoe UI', serif;
+	font-size: 16px;
+	vertical-align: middle middle;
+	font-style: italic;
+}
+
+ul {
+	padding-left: 0;
+}
+
+ul li {
+	list-style: none;
+	list-style-type: none;
+	width: 96%;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.3);
+	margin-left: 4px;
+	font-family: 'Cambria';
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+ul li input[type="text"] {
+	width: 90%;
+	height: 100%;
+	margin-left: 8px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: none;
+	text-align: left;
+	font-family: 'Cambria';
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+ul li input[type="submit"] {
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	text-align: left;
+	font-family: 'Cambria';
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+ul li:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+ul li:active {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* END OF SONG LIST AT THE RIGHT SIDE */
+/* ============================= END OF PLAYER PAGE ============================= */

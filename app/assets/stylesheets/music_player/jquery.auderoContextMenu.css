@@ -1,0 +1,31 @@
+ul.audero-context-menu
+{
+   position: fixed;
+   z-index: 1000;
+   display: none;
+   background-color: rgba(0, 0, 0, 0.2);
+   list-style-type: none !important;
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
+ul.audero-context-menu *
+{
+   color: menutext;
+}
+
+ul.audero-context-menu > li
+{
+   margin: 0 !important;
+   padding: 2px 5px !important;
+}
+
+ul.audero-context-menu > li:hover
+{
+   background-color: rgba(0, 0, 0, 0.4);
+}
+
+ul.audero-context-menu > li a
+{
+   display: block;
+}
